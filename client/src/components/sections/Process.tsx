@@ -31,7 +31,7 @@ const Process: React.FC = () => {
   ];
 
   return (
-    <section id="process" className="py-20 md:py-32 bg-transparent">
+    <section id="process" className="py-20 md:py-32 bg-black/40 backdrop-blur-xl">
       <div className="container mx-auto px-6">
         <motion.div 
             className="text-center mb-16"
@@ -45,7 +45,7 @@ const Process: React.FC = () => {
         </motion.div>
         <div className="max-w-3xl mx-auto">
             <motion.div 
-                className="p-8 md:p-12 bg-gradient-to-br from-black/20 via-black/10 to-transparent backdrop-blur-2xl rounded-2xl border border-white/25 shadow-2xl shadow-black/40"
+                className="p-8 md:p-12 bg-black/40 backdrop-blur-2xl rounded-2xl border border-white/30 shadow-2xl"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}

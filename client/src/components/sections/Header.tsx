@@ -80,7 +80,7 @@ const Header: React.FC = () => {
       <motion.header 
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-150 ${
           isScrolled || isMenuOpen 
-            ? 'bg-black/95 backdrop-blur-xl border-b border-white/20 shadow-2xl' 
+            ? 'bg-black/40 backdrop-blur-2xl border-b border-white/30 shadow-2xl' 
             : 'bg-transparent'
         }`}
         initial={{ y: -100 }}
@@ -111,14 +111,14 @@ const Header: React.FC = () => {
               panelHeight={60}
               baseItemSize={40}
               magnification={55}
-              className="bg-black/20 backdrop-blur-xl border-white/10"
+              className="bg-black/40 backdrop-blur-2xl border-white/20 shadow-lg"
             />
           </div>
           
           <motion.button 
             onClick={() => setIsMenuOpen(!isMenuOpen)} 
-            className="md:hidden text-white focus:outline-none z-50 p-2 rounded-lg border border-white/20 bg-white/5 backdrop-blur-xl"
-            whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
+            className="md:hidden text-white focus:outline-none z-50 p-2 rounded-lg border border-white/30 bg-black/40 backdrop-blur-2xl shadow-lg"
+            whileHover={{ scale: 1.05, backgroundColor: "rgba(0, 0, 0, 0.2)" }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
           >
@@ -164,7 +164,7 @@ const Header: React.FC = () => {
             animate="visible"
             exit="exit"
             variants={menuVariants}
-            className="md:hidden fixed inset-0 bg-black/90 backdrop-blur-xl z-40 pt-20 px-4 overflow-y-auto"
+            className="md:hidden fixed inset-0 bg-black/60 backdrop-blur-2xl z-40 pt-20 px-4 overflow-y-auto border-b border-white/30 shadow-2xl"
           >
             <nav className="flex flex-col items-center space-y-6 mt-8">
               <div className="grid grid-cols-2 gap-4 w-full max-w-xs">
@@ -172,7 +172,7 @@ const Header: React.FC = () => {
                   <button
                     key={index}
                     onClick={item.onClick}
-                    className="flex flex-col items-center gap-2 p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-cyan-400/20 hover:text-cyan-300 transition-all duration-150"
+                    className="flex flex-col items-center gap-2 p-4 rounded-xl bg-black/40 backdrop-blur-xl border border-white/20 text-white hover:bg-black/60 hover:text-white transition-all duration-150 shadow"
                   >
                     <div className="w-8 h-8 flex items-center justify-center">
                       {item.icon}

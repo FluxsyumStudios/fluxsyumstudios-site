@@ -26,33 +26,16 @@ const cardVariants = {
 };
 
 const PhilosophyCard: React.FC<PhilosophyCardProps> = ({ icon, title, description, index }) => (
-  <motion.div 
-    className="group relative bg-gradient-to-br from-white/5 via-white/5 to-transparent backdrop-blur-3xl p-8 rounded-3xl border border-white/10 shadow-2xl shadow-black/40 transition-all duration-500 card-hover gradient-border"
-    variants={cardVariants}
-    whileHover={{
-      y: -15,
-      scale: 1.05,
-      transition: { duration: 0.4, ease: [0.4, 0, 0.2, 1] }
-    }}
-    initial="hidden"
-    whileInView="visible"
+  <motion.div
+    className="bg-black/40 backdrop-blur-2xl rounded-2xl border border-white/30 p-6 shadow-xl flex flex-col items-center text-center transition-all duration-300 hover:bg-black/60 hover:shadow-2xl"
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, amount: 0.3 }}
+    transition={{ duration: 0.4, delay: index * 0.1 }}
   >
-    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-    
-    <motion.div 
-      className="relative z-10 text-cyan-400 mb-6 w-16 h-16 flex items-center justify-center bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl group-hover:from-cyan-400/30 group-hover:to-blue-400/30 transition-all duration-500 border border-cyan-400/20 group-hover:border-cyan-400/40 neon-border"
-      whileHover={{ 
-        scale: 1.1,
-        rotate: 5,
-        transition: { duration: 0.3 }
-      }}
-    >
-      {icon}
-    </motion.div>
-    
-    <h3 className="text-2xl font-bold mb-4 text-white gradient-text group-hover:gradient-text-cyan transition-all duration-500">{title}</h3>
-    <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-500 leading-relaxed">{description}</p>
+    <div className="mb-4 text-3xl text-white/90">{icon}</div>
+    <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
+    <p className="text-gray-200 font-light">{description}</p>
   </motion.div>
 );
 

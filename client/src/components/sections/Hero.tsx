@@ -10,9 +10,9 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="relative h-screen flex items-center justify-center text-center px-4 overflow-hidden bg-black">
+    <section id="home" className="relative h-screen flex items-center justify-center text-center px-4 overflow-hidden bg-black/40 backdrop-blur-2xl shadow-2xl">
       {/* Luna Theme Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/30 via-black to-gray-900/30"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-transparent to-cyan-900/10"></div>
       
       {/* Moon Elements */}
       <div className="absolute top-20 right-20 opacity-20">

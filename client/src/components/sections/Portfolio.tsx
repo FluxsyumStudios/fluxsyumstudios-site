@@ -8,7 +8,7 @@ const portfolioData: PortfolioItem[] = [
     id: 1,
     title: 'Fluxsyum Launcher',
     description: 'Um launcher para jogar em todos os nossos Projetos.',
-    imageUrl: 'https://cdn.discordapp.com/attachments/1284858760669560917/1388321292561678427/fluxsyumlauncherlogobranca.png?ex=68608e75&is=685f3cf5&hm=aa4d0e72b9f5c6ec80e213d72dfdb3edeb9ab4029d55a7190f01ef5555a2635d&',
+    imageUrl: 'https://cdn.discordapp.com/attachments/1284858760669560917/1388644080241610772/image.png?ex=6861bb14&is=68606994&hm=bc02ca9b31341a0e1bb8d7054bca0f8461b4ee49ed35b14c7769685522baba9f&',
     tags: ['Launcher', 'Minecraft', 'Jogos']
   },
   {
@@ -42,7 +42,7 @@ const cardVariants = {
 
 const PortfolioCard: React.FC<{ item: PortfolioItem; index: number }> = ({ item, index }) => (
   <motion.div 
-    className="group relative overflow-hidden rounded-3xl shadow-2xl bg-gradient-to-br from-white/5 to-transparent backdrop-blur-3xl border border-white/10 transition-all duration-700 card-hover gradient-border"
+    className="group relative overflow-hidden rounded-3xl shadow-2xl bg-black/40 backdrop-blur-2xl border border-white/30 transition-all duration-700 card-hover gradient-border"
     variants={cardVariants}
     whileHover={{
       y: -20,
@@ -58,11 +58,11 @@ const PortfolioCard: React.FC<{ item: PortfolioItem; index: number }> = ({ item,
         whileHover={{ scale: 1.1 }}
         transition={{ duration: 0.7 }}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
       
       {/* Floating overlay effect */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        className="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         initial={{ scale: 1.2, opacity: 0 }}
         whileHover={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.3 }}
@@ -88,7 +88,7 @@ const PortfolioCard: React.FC<{ item: PortfolioItem; index: number }> = ({ item,
         {item.description}
       </motion.p>
       
-      <motion.div 
+      {/* <motion.div 
         className="flex flex-wrap gap-2 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-200"
       >
         {item.tags.map((tag, tagIndex) => (
@@ -107,7 +107,7 @@ const PortfolioCard: React.FC<{ item: PortfolioItem; index: number }> = ({ item,
             {tag}
           </motion.span>
         ))}
-      </motion.div>
+      </motion.div> */}
     </motion.div>
     
     {/* Bottom accent line */}
@@ -117,7 +117,7 @@ const PortfolioCard: React.FC<{ item: PortfolioItem; index: number }> = ({ item,
 
 const Portfolio: React.FC = () => {
   return (
-    <section id="portfolio" className="py-20 md:py-32 bg-black/20">
+    <section id="portfolio" className="py-20 md:py-32 bg-black/40 backdrop-blur-xl">
       <div className="container mx-auto px-6">
         <motion.div 
             className="text-center mb-16"

@@ -33,14 +33,14 @@ const Download: React.FC = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div 
-            className="max-w-5xl mx-auto bg-gradient-to-br from-white/5 via-white/5 to-transparent backdrop-blur-3xl rounded-3xl border border-white/10 p-6 sm:p-8 md:p-16 lg:p-20 text-center shadow-2xl shadow-black/40 gradient-border floating-animation mx-4 sm:mx-6"
+            className="max-w-5xl mx-auto bg-black/40 backdrop-blur-2xl rounded-3xl border border-white/30 p-6 sm:p-8 md:p-16 lg:p-20 text-center shadow-2xl gradient-border floating-animation mx-4 sm:mx-6"
             initial={{ opacity: 0, y: 80, scale: 0.8 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
         >
           <motion.div
-            className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            className="absolute inset-0 bg-gradient-to-br from-black/60 via-transparent to-cyan-900/10 rounded-3xl opacity-100 group-hover:opacity-100 transition-opacity duration-500"
           />
           
           <motion.h2 
