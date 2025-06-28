@@ -181,7 +181,7 @@ const Header: React.FC = () => {
                   </button>
                 ))}
               </div>
-              <motion.div variants={menuItemVariants} className="mt-12">
+              {/* <motion.div variants={menuItemVariants} className="mt-12">
                 <motion.a 
                   href="#download" 
                   onClick={() => setIsMenuOpen(false)} 
@@ -194,7 +194,7 @@ const Header: React.FC = () => {
                 >
                   Download Launcher
                 </motion.a>
-              </motion.div>
+              </motion.div> */}
             </nav>
           </motion.div>
         )}
