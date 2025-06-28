@@ -24,6 +24,13 @@ const portfolioData: PortfolioItem[] = [
     description: 'Uma série onde o mundo é sem limites.',
     imageUrl: 'https://cdn.discordapp.com/attachments/1284858760669560917/1388325939230019604/minecraft_dominio.png?ex=686092c9&is=685f4149&hm=4b69ff46bf384afee5b9ce78f388d4b0f632dfefd09708a9689b9c8f39a3d569&',
     tags: ['Série', 'Minecraft', 'Jogos']
+  },
+  {
+    id: 4,
+    title: 'FS Optimizer',
+    description: 'Um modpack de otimização preciso para todos os projetos da Fluxsyum.',
+    imageUrl: 'https://cdn.discordapp.com/attachments/1284858760669560917/1388648704034082968/fsoptimizer.png?ex=6861bf62&is=68606de2&hm=3022c1e9303bc249fba40d491ffdaa15a4df2be255dff8c11b239697848093a5&',
+    tags: ['Optimizer', 'Minecraft', 'Jogos']
   }
 ];
 
