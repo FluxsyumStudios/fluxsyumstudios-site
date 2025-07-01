@@ -96,9 +96,10 @@ const Header: React.FC = () => {
             transition={{ type: "spring", stiffness: 600, damping: 35 }}
           >
             <img 
-              src="https://cdn.discordapp.com/attachments/1284858760669560917/1388605482079354982/fluxsyumlogo.png?ex=68619721&is=686045a1&hm=169939f311a14f3a295c9cb0139b7849c7469fa168b92572a1256640bdb2249d&" 
+              src="https://i.postimg.cc/SRmLJrp3/fluxsyumlogo.png"
               alt="Fluxsyum Studios"
               className="w-8 h-8 md:w-10 md:h-10"
+              onError={(e) => { (e.target as HTMLImageElement).src = "/placeholder.png"; }}
             />
             <span className="hidden sm:inline whitespace-nowrap">
               FLUXSYUM<span className="font-light text-gray-300 ml-1">STUDIOS</span>

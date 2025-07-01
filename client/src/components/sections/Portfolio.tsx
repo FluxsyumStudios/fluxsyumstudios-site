@@ -8,28 +8,28 @@ const portfolioData: PortfolioItem[] = [
     id: 1,
     title: 'Fluxsyum Launcher',
     description: 'Um launcher para jogar em todos os nossos Projetos.',
-    imageUrl: 'https://cdn.discordapp.com/attachments/1284858760669560917/1388644080241610772/image.png?ex=6861bb14&is=68606994&hm=bc02ca9b31341a0e1bb8d7054bca0f8461b4ee49ed35b14c7769685522baba9f&',
+    imageUrl: 'https://i.postimg.cc/YSZMrnQ2/fslauncher.png',
     tags: ['Launcher', 'Minecraft', 'Jogos']
   },
   {
     id: 2,
     title: 'Fluxsyum SMP',
     description: 'Um SMP cheio de mistérios e magia.',
-    imageUrl: 'https://cdn.discordapp.com/attachments/1284858760669560917/1388308683754311680/20250619_233918.jpg?ex=686082b7&is=685f3137&hm=b350beb5ea2024694298766eccc18f7fbfcf5c084218b0bacdc001adaa3f5703&',
+    imageUrl: 'https://i.postimg.cc/Y0tVMYDq/fssmp.jpg',
     tags: ['SMP', 'Minecraft', 'Jogos']
   },
   {
     id: 3,
     title: 'Minecraft Domínio',
     description: 'Uma série onde o mundo é sem limites.',
-    imageUrl: 'https://cdn.discordapp.com/attachments/1284858760669560917/1388325939230019604/minecraft_dominio.png?ex=686092c9&is=685f4149&hm=4b69ff46bf384afee5b9ce78f388d4b0f632dfefd09708a9689b9c8f39a3d569&',
+    imageUrl: 'https://i.postimg.cc/VND0K8yG/minecraft-dominio.png',
     tags: ['Série', 'Minecraft', 'Jogos']
   },
   {
     id: 4,
     title: 'FS Optimizer',
-    description: 'Um modpack de otimização preciso para todos os projetos da Fluxsyum.',
-    imageUrl: 'https://cdn.discordapp.com/attachments/1284858760669560917/1388648704034082968/fsoptimizer.png?ex=6861bf62&is=68606de2&hm=3022c1e9303bc249fba40d491ffdaa15a4df2be255dff8c11b239697848093a5&',
+    description: 'Um modpack focado em otimização open source',
+    imageUrl: 'https://i.postimg.cc/RZvcdG60/fsoptimizer.png',
     tags: ['Optimizer', 'Minecraft', 'Jogos']
   }
 ];
@@ -141,7 +141,7 @@ const Portfolio: React.FC = () => {
             stagger={0.02}
             className="text-3xl md:text-4xl font-bold text-white"
           >
-            Reinos que Forjamos
+            Projetos que trouxemos à vida
           </ScrollFloat>
           <p className="max-w-2xl mx-auto text-gray-400 mt-4">Explore a diversidade e a qualidade dos mundos que já trouxemos à vida.</p>
         </motion.div>
