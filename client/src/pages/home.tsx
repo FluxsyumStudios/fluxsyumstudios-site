@@ -48,6 +48,7 @@ const Home: React.FC = () => {
       <Philosophy />
       <Portfolio />
       <Process />
+      <Download />
       <Footer />
     </div>
   );
