@@ -1,54 +1,54 @@
 import React, { useEffect } from 'react';
 import Header from '@/components/sections/Header';
 import Hero from '@/components/sections/Hero';
-import Philosophy from '@/components/sections/Philosophy';
 import Portfolio from '@/components/sections/Portfolio';
-import Process from '@/components/sections/Process';
 import Download from '@/components/sections/Download';
+import Contact from '@/components/sections/Contact';
 import Footer from '@/components/sections/Footer';
+import Dither from '@/components/ui/Dither';
 
 const Home: React.FC = () => {
   useEffect(() => {
-    // Smooth scrolling for anchor links
     const handleAnchorClick = (e: Event) => {
       const target = e.target as HTMLAnchorElement;
       if (target.getAttribute('href')?.startsWith('#')) {
-        e.preventDefault();
         const targetId = target.getAttribute('href')?.substring(1);
-        const targetElement = document.getElementById(targetId || '');
-        if (targetElement) {
-          const headerHeight = 80; // Account for fixed header
-          const targetPosition = targetElement.offsetTop - headerHeight;
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
+        if (targetId) {
+          e.preventDefault();
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+          }
         }
       }
     };
 
-    // Add event listeners to all anchor links
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
-    anchorLinks.forEach(link => {
-      link.addEventListener('click', handleAnchorClick);
-    });
-
-    // Cleanup event listeners
-    return () => {
-      anchorLinks.forEach(link => {
-        link.removeEventListener('click', handleAnchorClick);
-      });
-    };
+    anchorLinks.forEach(link => link.addEventListener('click', handleAnchorClick));
+    return () => anchorLinks.forEach(link => link.removeEventListener('click', handleAnchorClick));
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to -gray-900">
+    <div className="min-h-screen bg-transparent text-white antialiased relative">
+      {/* Fundo Preto e Branco com Dither */}
+      <Dither 
+        waveColor={[0.2, 0.2, 0.2]} // Tons de cinza puro
+        colorNum={3} 
+        pixelSize={2} 
+        waveSpeed={0.02} 
+        waveAmplitude={0.5} 
+        waveFrequency={2.0}
+        enableMouseInteraction={true}
+        mouseRadius={0.4}
+      />
+
       <Header />
-      <Hero />
-      <Philosophy />
-      <Portfolio />
-      <Process />
-      <Download />
+      <main className="relative z-10">
+        <Hero />
+        <Portfolio />
+        <Download />
+        <Contact />
+      </main>
       <Footer />
     </div>
   );

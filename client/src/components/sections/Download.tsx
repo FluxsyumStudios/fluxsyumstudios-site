@@ -1,180 +1,95 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Download, ExternalLink, FolderOpen } from 'lucide-react';
-import ScrollFloat from '../ui/scroll-float';
 
-const publicFiles = [
-  {
-    name: 'README.txt',
-    url: '/files/README.txt',
-    description: 'Arquivo de exemplo hospedado pelo proprio site.',
-  },
-];
-
-const DownloadSection: React.FC = () => {
+const Download: React.FC = () => {
   return (
-    <section id="download" className="py-20 md:py-40 bg-transparent relative overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(15)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-white rounded-full opacity-10"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [-30, -150],
-              opacity: [0, 0.4, 0],
-              scale: [0, 1, 0],
-            }}
-            transition={{
-              duration: Math.random() * 4 + 3,
-              repeat: Infinity,
-              delay: Math.random() * 3,
-            }}
-          />
-        ))}
-      </div>
+    <section id="client" className="py-32 px-6 relative">
+      <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 1, ease: [0.21, 1, 0.36, 1] }}
+        className="max-w-5xl mx-auto glass-panel p-10 md:p-20 flex flex-col md:flex-row items-center justify-between gap-12 border-white/5 relative overflow-hidden group"
+      >
+        {/* Subtle background glow that follows the group hover */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <motion.div
-          className="max-w-6xl mx-auto bg-black/40 backdrop-blur-2xl rounded-3xl border border-white/30 p-6 sm:p-8 md:p-16 lg:p-20 shadow-2xl gradient-border mx-4 sm:mx-6"
-          initial={{ opacity: 0, y: 80, scale: 0.96 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-        >
-          <motion.h2
-            className="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 sm:mb-6 gradient-text text-glow"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.4, delay: 0.1 }}
+        <div className="text-left md:w-1/2 z-10">
+          <motion.h2 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="text-4xl md:text-6xl font-black mb-6 text-white leading-tight"
           >
-            <ScrollFloat
-              animationDuration={0.5}
-              ease="power2.out"
-              scrollStart="top bottom-=50px"
-              scrollEnd="bottom top+=50px"
-              stagger={0.03}
-              className="gradient-text-cyan text-glow-cyan"
-            >
-              Arquivos publicos
-            </ScrollFloat>
+            Fluxsyum <br />
+            <span className="text-white/20">Client.</span>
           </motion.h2>
-
-          <motion.p
-            className="max-w-3xl mx-auto text-center text-gray-200 text-lg md:text-xl mb-10 leading-relaxed font-light"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+          
+          <motion.p 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="text-white/40 text-lg mb-10 font-light leading-relaxed"
           >
-            Sim: qualquer arquivo colocado em <span className="font-semibold text-white">client/public/files</span> fica
-            acessivel por URL direta. Exemplo: <span className="font-semibold text-cyan-300">/files/NOME-DO-ARQUIVO</span>.
+            Acesse todos os projetos do estúdio com um clique. Performance otimizada e conexão instantânea.
           </motion.p>
 
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-10"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+          <motion.a 
+            whileHover={{ scale: 1.02, y: -2 }}
+            whileTap={{ scale: 0.98 }}
+            href="http://node.fluxsyumstudios.site:25565/Installer/Fluxsyum-Launcher-installer-1.0.0.exe" 
+            target="_blank" 
+            className="inline-flex items-center gap-4 px-10 py-5 bg-white text-black rounded-full font-black text-xs uppercase tracking-widest shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] transition-all"
           >
-            <motion.a
-              href={publicFiles[0].url}
-              download
-              className="group relative px-8 sm:px-10 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-2xl text-base sm:text-lg overflow-hidden transition-all duration-200 flex items-center justify-center gap-3"
-              whileHover={{
-                scale: 1.04,
-                boxShadow: '0 20px 40px rgba(34, 211, 238, 0.28)',
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+            </svg>
+            Baixar Agora
+          </motion.a>
+        </div>
+
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9, rotate: 2 }}
+          whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4, duration: 1 }}
+          className="md:w-1/2 flex justify-center z-10"
+        >
+          <div className="w-full max-w-sm aspect-[4/3] bg-white/[0.03] border border-white/10 rounded-2xl relative overflow-hidden flex items-center justify-center shadow-2xl backdrop-blur-sm">
+            <div className="absolute top-0 w-full h-8 bg-white/5 flex items-center px-4 gap-2 border-b border-white/10">
+              <div className="w-2 h-2 rounded-full bg-white/10"></div>
+              <div className="w-2 h-2 rounded-full bg-white/10"></div>
+              <div className="w-2 h-2 rounded-full bg-white/10"></div>
+            </div>
+            
+            <motion.div 
+              animate={{ 
+                opacity: [0.1, 0.3, 0.1],
+                scale: [1, 1.05, 1]
               }}
-              whileTap={{ scale: 0.96 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 18 }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="text-white/10 font-black text-7xl tracking-tighter"
             >
-              <Download className="w-5 h-5 relative z-10" />
-              <span className="relative z-10">Baixar arquivo teste</span>
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500"
-                initial={{ x: '-100%' }}
-                whileHover={{ x: '0%' }}
-                transition={{ duration: 0.3 }}
-              />
-            </motion.a>
-
-            <motion.a
-              href={publicFiles[0].url}
-              target="_blank"
-              rel="noreferrer"
-              className="px-8 sm:px-10 py-4 border border-white/30 text-white font-bold rounded-2xl text-base sm:text-lg bg-white/5 hover:bg-white/10 transition-all duration-200 flex items-center justify-center gap-3"
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.96 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 18 }}
-            >
-              <ExternalLink className="w-5 h-5" />
-              <span>Abrir pela URL</span>
-            </motion.a>
-          </motion.div>
-
-          <motion.div
-            className="grid md:grid-cols-3 gap-4"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            <div className="rounded-2xl border border-white/20 bg-white/5 p-5 text-white">
-              <div className="flex items-center gap-3 mb-3">
-                <FolderOpen className="w-5 h-5 text-cyan-300" />
-                <span className="font-semibold">Pasta publicada</span>
-              </div>
-              <p className="text-sm text-gray-300">client/public/files</p>
+              FLUX
+            </motion.div>
+            
+            {/* Animated progress bar mock */}
+            <div className="absolute bottom-10 left-10 right-10 h-1 bg-white/5 rounded-full overflow-hidden">
+               <motion.div 
+                initial={{ x: "-100%" }}
+                whileInView={{ x: "0%" }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.5, delay: 1, ease: "circOut" }}
+                className="h-full w-full bg-white/20"
+               />
             </div>
-
-            <div className="rounded-2xl border border-white/20 bg-white/5 p-5 text-white">
-              <div className="flex items-center gap-3 mb-3">
-                <ExternalLink className="w-5 h-5 text-cyan-300" />
-                <span className="font-semibold">Base de acesso</span>
-              </div>
-              <p className="text-sm text-gray-300">/files/</p>
-            </div>
-
-            <div className="rounded-2xl border border-white/20 bg-white/5 p-5 text-white">
-              <div className="flex items-center gap-3 mb-3">
-                <Download className="w-5 h-5 text-cyan-300" />
-                <span className="font-semibold">Exemplo pronto</span>
-              </div>
-              <a
-                href={publicFiles[0].url}
-                className="text-sm text-cyan-300 break-all hover:text-cyan-200 transition-colors"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {publicFiles[0].url}
-              </a>
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="mt-8 rounded-2xl border border-cyan-400/20 bg-cyan-500/5 p-5 text-sm text-gray-200"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.4, delay: 0.5 }}
-          >
-            Mude so o final da URL para outro arquivo existente na mesma pasta. Exemplo:
-            <span className="block mt-2 font-mono text-cyan-300">/files/README.txt</span>
-            <span className="block mt-1 font-mono text-cyan-300">/files/outro-arquivo.zip</span>
-          </motion.div>
-
-          <div className="sr-only">
-            {publicFiles.map((file) => `${file.name} ${file.description}`).join(' ')}
           </div>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 };
 
-export default DownloadSection;
+export default Download;
